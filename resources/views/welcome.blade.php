@@ -19,7 +19,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: cursive;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -121,6 +121,10 @@
               right: 0;
               top: 0;
             }   
+            .text-navbar {
+                font-size:20px;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -131,7 +135,7 @@
                         <img class="mr-10" src="http://utc2.edu.vn//uploads/img/images/logo.png"/>
                     </div>
                     <div class="col-sm-6">
-                        <label class="mr-top-20" style="font-size:25px;text-align: center; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">CHƯƠNG TRÌNH HỖ TRỢ GIẢI CÁC BÀI TẬP <br/> KIẾN THỨC ĐẠI SỐ TUYẾN TÍNH</label>
+                        <label class="mr-top-20" style="font-size:22px;text-align: center; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">CHƯƠNG TRÌNH HỖ TRỢ GIẢI CÁC BÀI TẬP <br/> KIẾN THỨC ĐẠI SỐ TUYẾN TÍNH</label>
                     </div>
                 </div>
             </div>
@@ -141,7 +145,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse text-navbar" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown text-navbar">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định thức ma trận</a>
@@ -180,12 +184,15 @@
                             <input type="text" name="" class="form-control border-input" value="" id="operator" readonly>
                             <div class="file btn btn-success upfile mr-top-20" id="upfile">
                                 Upload
-                                <input type="file" name="file" class="upfile" id="upfiles"/>
+                                <input type="file" name="file" class="upfile" id="upfiles" onchange="onFileSelected(event)"/>
                             </div>
                             <textarea class="form-control mr-top-20 border-input" id="exampleFormControlTextarea1" rows="10"></textarea>
                         </div>
                         <div class="col-sm-1">
-                            <button class="btn btn-success mr-5"><i class="fas fa-angle-double-right"></i></button><br/>
+                            <div class="container">
+                                <button class="btn btn-success mr-5"  style="text-align:center"><i class="fas fa-angle-double-right"></i></button>
+                            </div>
+                            
                         </div>
                         <div class="col-sm-7 border-frm" id="show">
                         </div>
@@ -194,7 +201,7 @@
             </div>
         </div>
         <hr/>
-        <div class="pd-50" style="background-color: lightseagreen; color: black">
+        <div class="pd-50" style="background-color: #0080ff; color: black">
             TRƯỜNG ĐH GIAO THÔNG VẬN TẢI - PHÂN HIỆU TẠI TP. HCM<br/>
             Địa chỉ: 450-451 Lê Văn Việt, Phường Tăng Nhơn Phú A, Quận 9, TP. Hồ Chí Minh<br/>
             Điện thoại: (028).3896.6798 - (028).7300.1155 - Email: banbientap@utc2.eu.vn<br/>
@@ -205,9 +212,31 @@
                 $("#operator").val($(this).text());
             });
 
-            $("#upfiles").click(function() {
-                
-            });
+            function onFileSelected(event) {
+
+              var selectedFile = event.target.files[0];
+
+              if(getFileExtension(selectedFile.name) === "txt"){
+                    var reader = new FileReader();
+
+                    var result = document.getElementById("exampleFormControlTextarea1");
+
+                    reader.onload = function(event) {
+                        result.innerHTML = event.target.result;
+                    };
+
+                    reader.readAsText(selectedFile);
+              }
+              else{
+              alert(".txt file, PLEASE!!!")
+
+              }
+            }
+
+            function getFileExtension(filename) {
+                return filename.split('.').pop();
+            }
+
         </script>
     </body>
 </html>
