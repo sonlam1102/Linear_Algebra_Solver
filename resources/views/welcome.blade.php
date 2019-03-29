@@ -68,7 +68,7 @@
             }
 
             .border-frm{
-                border: 2px solid black;
+                border: 1px solid black;
                 border-radius: 5px;
                 height: 450px;
             }
@@ -81,18 +81,46 @@
             .mr-top-40{
                 margin-top:40px;
             }
+            .mr-top-10{
+                margin-top:10px;
+            }
             .navbar-cus{
                 background-color: #0080ff;
             }
             li.text-navbar a {
                 color: #000;
             }
-            li a hover{
-                background-color: 936c6c
+            li a.operator:hover{
+                box-shadow: 0px 1px 0 0px blue inset, 0px -1px 0 0px blue inset;
+                background-color: #0080ff
             }
             .right-title{
                 text-align: center;
             }
+            .mr-10{
+                margin:10px;
+            }
+            .pd-50{
+                padding: 50px
+            }
+            .border-input{
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            #navbarSupportedContent{
+                color: black
+            }
+            div.upfile {
+              position: relative;
+              overflow: hidden;
+            }
+            input.upfile {
+              position: absolute;
+              font-size: 50px;
+              opacity: 0;
+              right: 0;
+              top: 0;
+            }   
         </style>
     </head>
     <body>
@@ -106,8 +134,6 @@
                         <label class="mr-top-20" style="font-size:25px;text-align: center; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">CHƯƠNG TRÌNH HỖ TRỢ GIẢI CÁC BÀI TẬP <br/> KIẾN THỨC ĐẠI SỐ TUYẾN TÍNH</label>
                     </div>
                 </div>
-                
-                
             </div>
             <nav class="navbar navbar-expand-lg navbar-cus">
                 <a class="navbar-brand" href="#" style="color: #000"><i class="fas fa-home"></i></a>
