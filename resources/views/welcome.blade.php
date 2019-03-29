@@ -117,20 +117,20 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown text-navbar">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định thức ma trận</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định Thức - Ma Trận</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator" href="#">Action</a>
-                          <a class="dropdown-item get-operator" href="#">Another action</a>
+                          <a class="dropdown-item get-operator" href="#">Cộng Ma Trận</a>
+                          <a class="dropdown-item get-operator" href="#">Trừ Ma Trận</a>
                           <!-- <div class="dropdown-divider"></div> -->
-                          <a class="dropdown-item get-operator" href="#">Something else here</a>
+                          <a class="dropdown-item get-operator" href="#">Luỹ Thừa Ma Trận</a>
                         </div>
                     </li>
                     <li class="nav-item active text-navbar">
-                        <a class="nav-link get-operator" href="#">Hệ phương trình tuyến tính <span class="sr-only"></span></a>
+                        <a class="nav-link get-operator" href="#">Hệ Phương Trình Tuyến Tính<span class="sr-only"></span></a>
                     </li>
 
                     <li class="nav-item dropdown text-navbar">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không Gian Vectơ</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item get-operator" href="#">Action</a>
                           <a class="dropdown-item get-operator" href="#">Another action</a>
@@ -151,11 +151,11 @@
                         <div class="col-sm-4 border-frm" style="width: 100%;color: blue;">
                             <label class="mr-top-20">Dạng bài toán</label>
                             <input type="text" name="" class="form-control" value="" id="operator">
-                            <button class="btn btn-success mr-top-20">Import file</button><br/>
+                            <button class="btn btn-success mr-top-20">Nhập Bài Toán</button><br/>
                             <textarea class="form-control mr-top-20" id="exampleFormControlTextarea1" rows="10"></textarea>
                         </div>
                         <div class="col-sm-1 mr-top-200">
-                            <button class="btn btn-success">Excute</button><br/>
+                            <button class="btn btn-success">Bài Giải</button><br/>
                         </div>
                         <div class="col-sm-7 border-frm">
                         </div>
