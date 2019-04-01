@@ -150,23 +150,34 @@
                     <li class="nav-item dropdown text-navbar">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định thức ma trận</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator operator" href="#">Action</a>
-                          <a class="dropdown-item get-operator operator" href="#">Another action</a>
-                          <!-- <div class="dropdown-divider"></div> -->
-                          <a class="dropdown-item get-operator operator" href="#">Something else here</a>
+                          <a class="dropdown-item get-operator operator" href="">Phép cộng ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Phép trừ ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Phép nhân ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Luỹ thừa ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Ma trận chuyển vị</a>
+                          <a class="dropdown-item get-operator operator" href="">Định thức ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Hạng ma trận</a>
+                          <a class="dropdown-item get-operator operator" href="">Ma trận nghịch đảo</a>
+                          <a class="dropdown-item get-operator operator" href="">Phương trình ma trận</a>
+
                         </div>
                     </li>
                     <li class="nav-item active text-navbar">
-                        <a class="nav-link get-operator" href="#">Hệ phương trình tuyến tính <span class="sr-only"></span></a>
+                        <a class="nav-link get-operator" href="">Hệ phương trình tuyến tính <span class="sr-only"></span></a>
                     </li>
 
                     <li class="nav-item dropdown text-navbar">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator operator" href="#">Action</a>
-                          <a class="dropdown-item get-operator operator" href="#">Another action</a>
-                          <!-- <div class="dropdown-divider"></div> -->
-                          <a class="dropdown-item get-operator operator" href="#">Something else here</a>
+                          <a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
+                          <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến tính</a>
+                          <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
+                          <a class="dropdown-item get-operator operator" href="">Hạng của hệ vector</a>
+                          <a class="dropdown-item get-operator operator" href="">Tập sinh không gian tuyến tính</a>
+                          <a class="dropdown-item get-operator operator" href="">Cơ sở không gian tuyến tính</a>
+                          <a class="dropdown-item get-operator operator" href="">Toạ độ vector</a>
+                          <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a>
+
                         </div>
                     </li>
                 </ul>
@@ -190,7 +201,7 @@
                         </div>
                         <div class="col-sm-1">
                             <div class="container">
-                                <button class="btn btn-success mr-5"  style="text-align:center"><i class="fas fa-angle-double-right"></i></button>
+                                <button class="btn btn-success mr-5" id="result" style="text-align:center"><i class="fas fa-angle-double-right"></i></button>
                             </div>
                             
                         </div>
@@ -208,15 +219,17 @@
             Fax: (028).3896.4736 - Website: http://utc2.edu.vn
         </div>
         <script type="text/javascript">
-            $(".get-operator").click(function(){
+            $(".get-operator").click(function(event){
+                event.preventDefault()
                 $("#operator").val($(this).text());
+                // $('#exampleFormControlTextarea1').val("");
+                $('div#show').empty();
+                console.log($('#exampleFormControlTextarea1').val())
             });
 
             function onFileSelected(event) {
-
               var selectedFile = event.target.files[0];
-
-              if(getFileExtension(selectedFile.name) === "txt"){
+              if(getFileExtension(selectedFile.name) && getFileExtension(selectedFile.name) === "txt"){
                     var reader = new FileReader();
 
                     var result = document.getElementById("exampleFormControlTextarea1");
@@ -227,15 +240,20 @@
 
                     reader.readAsText(selectedFile);
               }
-              else{
-              alert(".txt file, PLEASE!!!")
-
+              else {
+                alert(".txt file, PLEASE!!!")
               }
             }
 
             function getFileExtension(filename) {
                 return filename.split('.').pop();
             }
+
+            $('#result').click(function(event){
+                event.preventDefault()
+                var x = $('#exampleFormControlTextarea1').val()
+                $('div#show').text(x);
+            })
 
         </script>
     </body>
