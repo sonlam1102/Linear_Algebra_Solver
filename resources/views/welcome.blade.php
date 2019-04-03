@@ -193,7 +193,7 @@
                         <div class="col-sm-4 border-frm" style="width: 100%;color: blue;">
                             <label class="mr-top-20">Dạng bài toán</label>
                             <input type="text" name="" class="form-control border-input" value="" id="operator" readonly>
-                            <div class="file btn btn-success upfile mr-top-20" id="upfile" >
+                            <div class="file btn btn-success upfile mr-top-20" id="upfile">
                                 Upload
                                 <input type="file" name="file" class="upfile" id="upfiles" onchange="onFileSelected(event)"/>
                             </div>
@@ -237,6 +237,14 @@
                 //console.log($('#exampleFormControlTextarea1').val())
             });
 
+            // function stoppedTyping(){
+            //     if(this.value.length > 0) { 
+            //         document.getElementById('upfile').disabled = false; 
+            //     } else { 
+            //         document.getElementById('upfile').disabled = true;
+            //     }
+            // }
+
             function onFileSelected(event) {
                 var selectedFile = event.target.files[0];
                 if(getFileExtension(selectedFile.name) && getFileExtension(selectedFile.name) === "txt"){
@@ -271,6 +279,13 @@
                 }
                 
             })
+
+            $("#upfile").on('click', function(event){
+                if($('#operator').val().length===0){
+                    alert("Vui lòng chọn dạng bài toán!!!")
+                    event.preventDefault();
+                }
+             });           
 
         </script>
     </body>
