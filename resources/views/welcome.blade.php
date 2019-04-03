@@ -140,7 +140,7 @@
                 </div>
             </div>
             <nav class="navbar navbar-expand-lg navbar-cus">
-                <a class="navbar-brand" href="#" style="color: #000"><i class="fas fa-home"></i></a>
+                <a class="navbar-brand" href="#" style="color: #000"><i class="fas fa-home" id ="home"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -193,7 +193,7 @@
                         <div class="col-sm-4 border-frm" style="width: 100%;color: blue;">
                             <label class="mr-top-20">Dạng bài toán</label>
                             <input type="text" name="" class="form-control border-input" value="" id="operator" readonly>
-                            <div class="file btn btn-success upfile mr-top-20" id="upfile">
+                            <div class="file btn btn-success upfile mr-top-20" id="upfile" >
                                 Upload
                                 <input type="file" name="file" class="upfile" id="upfiles" onchange="onFileSelected(event)"/>
                             </div>
@@ -224,12 +224,22 @@
                 $("#operator").val($(this).text());
                 // $('#exampleFormControlTextarea1').val("");
                 $('div#show').empty();
+                $('#exampleFormControlTextarea1').empty();
                 console.log($('#exampleFormControlTextarea1').val())
             });
 
+            $(".fa-home").click(function(event){
+                event.preventDefault()
+                $("#operator").val($(this).text());
+                // $('#exampleFormControlTextarea1').val("");
+                $('div#show').empty();
+                $('#exampleFormControlTextarea1').empty();
+                //console.log($('#exampleFormControlTextarea1').val())
+            });
+
             function onFileSelected(event) {
-              var selectedFile = event.target.files[0];
-              if(getFileExtension(selectedFile.name) && getFileExtension(selectedFile.name) === "txt"){
+                var selectedFile = event.target.files[0];
+                if(getFileExtension(selectedFile.name) && getFileExtension(selectedFile.name) === "txt"){
                     var reader = new FileReader();
 
                     var result = document.getElementById("exampleFormControlTextarea1");
@@ -251,8 +261,15 @@
 
             $('#result').click(function(event){
                 event.preventDefault()
-                var x = $('#exampleFormControlTextarea1').val()
-                $('div#show').text(x);
+                var x = $('#exampleFormControlTextarea1').val();
+                var y = $('#operator').val();
+                if (y === '') {
+                alert("Chọn dạng bài toán muốn thực hiện, sau đó nhập bài toán trước khi giải");
+                }
+                else{
+                    $('div#show').text(x);
+                }
+                
             })
 
         </script>
