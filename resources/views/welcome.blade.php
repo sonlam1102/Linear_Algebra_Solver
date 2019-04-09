@@ -15,123 +15,13 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-        <link href=".../style.css" rel="stylesheet" type="text/css">
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: cursive;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+     </head>
 
-            .position-ref {
-                position: relative;
-            }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            .border-frm{
-                border: 1px solid black;
-                border-radius: 5px;
-                height: 450px;
-            }
-            .mr-top-200{
-                margin-top:200px;
-            }
-            .mr-top-20{
-                margin-top:20px;
-            }
-            .mr-top-40{
-                margin-top:40px;
-            }
-            .mr-top-10{
-                margin-top:10px;
-            }
-            .navbar-cus{
-                background-color: #0080ff;
-            }
-            li.text-navbar a {
-                color: #000;
-            }
-            li a.operator:hover{
-                box-shadow: 0px 1px 0 0px blue inset, 0px -1px 0 0px blue inset;
-                background-color: #0080ff
-            }
-            .right-title{
-                text-align: center;
-            }
-            .mr-10{
-                margin:10px;
-            }
-            .pd-50{
-                padding: 50px
-            }
-            .border-input{
-                border: 1px solid black;
-                border-radius: 5px;
-            }
-            #navbarSupportedContent{
-                color: black
-            }
-            div.upfile {
-              position: relative;
-              overflow: hidden;
-            }
-            input.upfile {
-              position: absolute;
-              font-size: 50px;
-              opacity: 0;
-              right: 0;
-              top: 0;
-            }   
-            .text-navbar {
-                font-size:20px;
-                font-weight: bold;
-            }
-            .border-frm {
-                overflow: scroll;
-            }
-        </style>
-    </head>
     <body>
         <div>
             <div class="container">
@@ -223,7 +113,12 @@
             Điện thoại: (028).3896.6798 - (028).7300.1155 - Email: banbientap@utc2.eu.vn<br/>
             Fax: (028).3896.4736 - Website: http://utc2.edu.vn
         </div>
-        <script type="text/javascript">
+       
+    </body>
+</html>
+ 
+
+ <script type="text/javascript">
             $(".get-operator").click(function(event){
                 event.preventDefault()
                 $("#operator").val($(this).text());
@@ -283,7 +178,4 @@
                     event.preventDefault();
                 }
              });           
-
-        </script>
-    </body>
-</html>
+</script>
