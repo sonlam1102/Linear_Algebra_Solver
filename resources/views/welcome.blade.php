@@ -15,8 +15,18 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+       <!--Thư viện latex-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
+        </script>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+
         <!-- Styles -->
-        <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <link href="/css/app.css" rel="stylesheet" type="text/css"> 
 
 
      </head>
@@ -106,7 +116,8 @@
                 </form>
             </div>
         </div>
-        <hr/>
+
+         <hr/>
         <div class="pd-50" style="background-color: #0080ff; color: black">
             TRƯỜNG ĐH GIAO THÔNG VẬN TẢI - PHÂN HIỆU TẠI TP. HCM<br/>
             Địa chỉ: 450-451 Lê Văn Việt, Phường Tăng Nhơn Phú A, Quận 9, TP. Hồ Chí Minh<br/>
@@ -161,13 +172,19 @@
 
             $('#result').click(function(event){
                 event.preventDefault()
-                var x = $('#exampleFormControlTextarea1').val();
+                var x = "$$";
+                    x += $('#exampleFormControlTextarea1').val();
+                    x+= "$$"
+
                 var y = $('#operator').val();
                 if (y === '') {
                 alert("Chọn dạng bài toán muốn thực hiện, sau đó nhập bài toán trước khi giải");
                 }
                 else{
-                    $('div#show').text(x);
+                    document.getElementById("show").innerHTML = x;
+                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                    
+                    /*$('div#show').text(x);*/
                 }
                 
             })
