@@ -114,7 +114,9 @@
                             </div>
                             
                         </div>
+                        <!-- <textarea class="col-sm-7 border-frm" id="show"> </textarea> --> 
                         <div class="col-sm-7 border-frm" id="show">
+                            
                         </div>
                     </div>
                 </form>
@@ -158,7 +160,6 @@
                     var reader = new FileReader();
 
                     var result = document.getElementById("exampleFormControlTextarea1");
-
                     reader.onload = function(event) {
                         result.innerHTML = event.target.result;
                     };
@@ -176,19 +177,19 @@
 
             $('#result').click(function(event){
                 event.preventDefault()
-                var x = "$$";
-                    x += $('#exampleFormControlTextarea1').val();
-                    x+= "$$"
+                var enteredText = "$";
 
+                enteredText += document.getElementById("exampleFormControlTextarea1").value;
+                enteredText += "$"
+
+                enteredText = enteredText.replace(/\n/g, "\$ <br/> \$");
                 var y = $('#operator').val();
                 if (y === '') {
                 alert("Chọn dạng bài toán muốn thực hiện, sau đó nhập bài toán trước khi giải");
                 }
                 else{
-                    document.getElementById("show").innerHTML = x;
-                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
-                    
-                    /*$('div#show').text(x);*/
+                    document.getElementById("show").innerHTML = enteredText;
+                     MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                 }
                 
             })
