@@ -78,14 +78,14 @@
                     <li class="nav-item dropdown text-navbar">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
                           <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến tính</a>
                           <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
+                          <!--<a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
                           <a class="dropdown-item get-operator operator" href="">Hạng của hệ vector</a>
                           <a class="dropdown-item get-operator operator" href="">Tập sinh không gian tuyến tính</a>
                           <a class="dropdown-item get-operator operator" href="">Cơ sở không gian tuyến tính</a>
                           <a class="dropdown-item get-operator operator" href="">Toạ độ vector</a>
-                          <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a>
+                          <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a> -->
 
                         </div>
                     </li>
