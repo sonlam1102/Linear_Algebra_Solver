@@ -15,6 +15,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
        <!--Thư viện latex trong toán-->
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({
@@ -90,9 +93,12 @@
                         </div>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0 search-form">
+                    <!-- <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search"> -->
+                    <select class="js-example-basic-single" name="search-select" id="search-select">
+                        
+                    </select>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit" style="margin-left: 10px">Search</button>
                 </form>
             </div>
             </nav>
@@ -136,6 +142,33 @@
  
 
  <script type="text/javascript">
+
+            $(document).ready(function() {
+                //search execute
+                var optionsarray = [
+                    "Phép cộng ma trận",
+                    "Phép trừ ma trận",
+                    "Phép nhân ma trận",
+                    "Luỹ thừa ma trận",
+                    "Ma trận chuyển vị",
+                    "Định thức ma trận",
+                    "Hạng ma trận",
+                    "Ma trận nghịch đảo",
+                    "Phương trình ma trận",
+                    "Hệ phương trình tuyến tính",
+                    "Độc lập tuyến tính,phụ thuộc tuyến tính",
+                    "Ma trận đổi cơ sở"
+                ]; 
+                var seloption = "";
+
+                $.each(optionsarray,function(i){
+                    seloption += '<option value="'+optionsarray[i]+'">'+optionsarray[i]+'</option>'; 
+                });
+
+                $('#search-select').append(seloption);
+                $('.js-example-basic-single').select2();
+            });
+
             $(".get-operator").click(function(event){
                 event.preventDefault()
                 $("#operator").val($(this).text());
@@ -199,5 +232,12 @@
                     alert("Vui lòng chọn dạng bài toán!!!")
                     event.preventDefault();
                 }
-             });           
+             });   
+                   
+            $('.search-form').on('submit', function(e){
+                // e.preventDefault()
+                var search = $('#search-select').val();
+                $("#operator").val(search);
+                return false
+            })
 </script>
