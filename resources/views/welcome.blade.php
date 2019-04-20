@@ -153,6 +153,11 @@
             $(document).ready(function() {
                 //search execute
                 let optionsarray = [
+
+                    {
+                        "name": "",
+                        "type": ""
+                    },
                     {
                         "name": "Phép cộng ma trận",
                         "type": "cong"
