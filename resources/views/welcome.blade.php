@@ -153,23 +153,65 @@
             $(document).ready(function() {
                 //search execute
                 let optionsarray = [
-                    "Phép cộng ma trận",
-                    "Phép trừ ma trận",
-                    "Phép nhân ma trận",
-                    "Luỹ thừa ma trận",
-                    "Ma trận chuyển vị",
-                    "Định thức ma trận",
-                    "Hạng ma trận",
-                    "Ma trận nghịch đảo",
-                    "Phương trình ma trận",
-                    "Hệ phương trình tuyến tính",
-                    "Độc lập tuyến tính,phụ thuộc tuyến tính",
-                    "Ma trận đổi cơ sở"
+                    {
+                        "name": "Phép cộng ma trận",
+                        "type": "cong"
+                    },
+
+                    {
+                        "name": "Phép trừ ma trận",
+                        "type": "tru"
+                    },
+                    {
+                        "name": "Phép nhân ma trận",
+                        "type": "nhan"
+                    },
+                    {
+                        "name": "Luỹ thừa ma trận",
+                        "type": "luy_thua"
+                    },
+                    {
+                        "name": "Ma trận chuyển vị",
+                        "type": "chuyen_vi"
+                    },
+                    {
+                        "name": "Định thức ma trận",
+                        "type": "dinh_thuc"
+                    },
+                    {
+                        "name": "Hạng ma trận",
+                        "type": "hang"
+                    },
+                    {
+                        "name": "Ma trận nghịch đảo",
+                        "type": "nghich_dao"
+                    },
+                    {
+                        "name": "Phương trình ma trận",
+                        "type": "pt_ma_tran"
+                    },
+                    {
+                        "name": "Hệ phương trình tuyến tính",
+                        "type": "nghiem_he_pt"
+                    },
+                    {
+                        "name": "Hệ phương trình tuyến tính",
+                        "type": "nghiem_he_pt"
+                    },
+                    {
+                        "name": "Độc lập tuyến tính,phụ thuộc tuyến tính",
+                        "type": "doc_lap_tt"
+                    },
+                    {
+                        "name": "Ma trận đổi cơ sở",
+                        "type": "doi_co_so"
+                    },
+
                 ]; 
                 let seloption = "";
 
                 $.each(optionsarray,function(i){
-                    seloption += '<option value="'+optionsarray[i]+'">'+optionsarray[i]+'</option>'; 
+                    seloption += '<option value="'+optionsarray[i].type+'">'+optionsarray[i].name+'</option>';
                 });
 
                 $('#search-select').append(seloption);
@@ -177,7 +219,7 @@
             });
 
             $(".get-operator").click(function(event){
-                event.preventDefault()
+                event.preventDefault();
                 $("#operator").val($(this).text());
                 // $('#exampleFormControlTextarea1').val("");
                 $('div#show').empty();
