@@ -10,7 +10,13 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script
+                src="https://code.jquery.com/jquery-3.4.0.min.js"
+                integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+                crossorigin="anonymous">
+        </script>
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -104,6 +110,7 @@
             </nav>
             <div style="margin:10px 50px;">
                 <form>
+                     <input id="token" value="{{ @csrf_token() }}" hidden>
                      <div class="row justify-content-between">
                         <div class="col-sm-4 border-frm" style="width: 100%;color: blue;">
                             <label class="mr-top-20">Dạng bài toán</label>
@@ -145,7 +152,7 @@
 
             $(document).ready(function() {
                 //search execute
-                var optionsarray = [
+                let optionsarray = [
                     "Phép cộng ma trận",
                     "Phép trừ ma trận",
                     "Phép nhân ma trận",
@@ -159,7 +166,7 @@
                     "Độc lập tuyến tính,phụ thuộc tuyến tính",
                     "Ma trận đổi cơ sở"
                 ]; 
-                var seloption = "";
+                let seloption = "";
 
                 $.each(optionsarray,function(i){
                     seloption += '<option value="'+optionsarray[i]+'">'+optionsarray[i]+'</option>'; 
@@ -188,7 +195,7 @@
             });
 
             function onFileSelected(event) {
-                var selectedFile = event.target.files[0];
+                let selectedFile = event.target.files[0];
                 if(getFileExtension(selectedFile.name) && getFileExtension(selectedFile.name) === "txt"){
                     var reader = new FileReader();
 
@@ -210,22 +217,40 @@
 
             $('#result').click(function(event){
                 event.preventDefault()
-                var enteredText = "$";
+                let enteredText = "$";
 
                 enteredText += document.getElementById("exampleFormControlTextarea1").value;
-                enteredText += "$"
+                enteredText += "$";
 
                 enteredText = enteredText.replace(/\n/g, "\$ <br/> \$");
-                var y = $('#operator').val();
+                let y = $('#operator').val();
+                let x = $("#exampleFormControlTextarea1").val();
                 if (y === '') {
                 alert("Chọn dạng bài toán muốn thực hiện, sau đó nhập bài toán trước khi giải");
                 }
-                else{
-                    document.getElementById("show").innerHTML = enteredText;
-                     MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                else {
+                    // xử lý lấy kết quả và trả về giao diện
+                    $.ajax({
+                        type: "POST",
+                        url: '/',
+                        dataType: 'json',
+                        data: {
+                            "type": y,
+                            "problem": x,
+                            "_token": $("#token").val()
+                        },
+                    }).done(function(response) {
+                        //xử lý kết quả thêm thì viết ở đây
+
+                        document.getElementById("show").innerHTML = response;
+                        MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                    });
+
+                    // document.getElementById("show").innerHTML = enteredText;
+                    // MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                 }
                 
-            })
+            });
 
             $("#upfile").on('click', function(event){
                 if($('#operator').val().length===0){
