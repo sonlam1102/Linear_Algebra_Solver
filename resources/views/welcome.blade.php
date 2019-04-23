@@ -63,50 +63,50 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-            <div class="collapse navbar-collapse text-navbar" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown text-navbar">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định thức ma trận</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator operator" href="">Phép cộng ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Phép trừ ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Phép nhân ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Luỹ thừa ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Ma trận chuyển vị</a>
-                          <a class="dropdown-item get-operator operator" href="">Định thức ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Hạng ma trận</a>
-                          <a class="dropdown-item get-operator operator" href="">Ma trận nghịch đảo</a>
-                          <a class="dropdown-item get-operator operator" href="">Phương trình ma trận</a>
+                <div class="collapse navbar-collapse text-navbar" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown text-navbar">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Định thức ma trận</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item get-operator operator" href="">Phép cộng ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Phép trừ ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Phép nhân ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Luỹ thừa ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Ma trận chuyển vị</a>
+                              <a class="dropdown-item get-operator operator" href="">Định thức ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Hạng ma trận</a>
+                              <a class="dropdown-item get-operator operator" href="">Ma trận nghịch đảo</a>
+                              <a class="dropdown-item get-operator operator" href="">Phương trình ma trận</a>
 
-                        </div>
-                    </li>
-                    <li class="nav-item active text-navbar">
-                        <a class="nav-link get-operator" href="">Hệ phương trình tuyến tính <span class="sr-only"></span></a>
-                    </li>
+                            </div>
+                        </li>
+                        <li class="nav-item active text-navbar">
+                            <a class="nav-link get-operator" href="">Hệ phương trình tuyến tính <span class="sr-only"></span></a>
+                        </li>
 
-                    <li class="nav-item dropdown text-navbar">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến tính</a>
-                          <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
-                          <!--<a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
-                          <a class="dropdown-item get-operator operator" href="">Hạng của hệ vector</a>
-                          <a class="dropdown-item get-operator operator" href="">Tập sinh không gian tuyến tính</a>
-                          <a class="dropdown-item get-operator operator" href="">Cơ sở không gian tuyến tính</a>
-                          <a class="dropdown-item get-operator operator" href="">Toạ độ vector</a>
-                          <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a> -->
+                        <li class="nav-item dropdown text-navbar">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Không gian vector</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến tính</a>
+                              <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
+                              <!--<a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
+                              <a class="dropdown-item get-operator operator" href="">Hạng của hệ vector</a>
+                              <a class="dropdown-item get-operator operator" href="">Tập sinh không gian tuyến tính</a>
+                              <a class="dropdown-item get-operator operator" href="">Cơ sở không gian tuyến tính</a>
+                              <a class="dropdown-item get-operator operator" href="">Toạ độ vector</a>
+                              <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a> -->
 
-                        </div>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0 search-form">
-                    <!-- <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search"> -->
-                    <select class="js-example-basic-single" name="search-select" id="search-select">
-                        
-                    </select>
-                    <button class="btn btn-success my-2 my-sm-0" type="submit" style="margin-left: 10px">Search</button>
-                </form>
-            </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 search-form" id="frm-search">
+                        <!-- <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search"> -->
+                        <select class="col-sm-4 js-example-basic-single" name="search-select" id="search-select">
+                            
+                        </select>
+                        <button class="btn btn-success my-2 my-sm-0" type="submit" style="margin-left: 10px">Search</button>
+                    </form>
+                </div>
             </nav>
             <div style="margin:10px 50px;">
                 <form>
@@ -223,22 +223,77 @@
             });
 
             $(".get-operator").click(function(event){
+            
                 event.preventDefault();
                 $("#operator").val($(this).text());
                 // $('#exampleFormControlTextarea1').val("");
-                $('div#show').empty();
-                $('#exampleFormControlTextarea1').empty();
-                console.log($('#exampleFormControlTextarea1').val())
+                /*$('div#show').empty();
+                $('#exampleFormControlTextarea1').empty();*/
+                /*console.log($('#exampleFormControlTextarea1').val())*/
+                document.getElementById("search-select").value ="";
+                setDefaultTextAreaValue();
             });
 
             $(".fa-home").click(function(event){
-                event.preventDefault()
-                $("#operator").val($(this).text());
-                // $('#exampleFormControlTextarea1').val("");
-                $('div#show').empty();
-                $('#exampleFormControlTextarea1').empty();
+                document.location.reload(true);
                 //console.log($('#exampleFormControlTextarea1').val())
             });
+
+            function setDefaultTextAreaValue() {
+                switch($("#operator").val()) {
+                    case "cong":
+                    case "Phép cộng ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[3,0,5],[-2,7,4]])+Matran([[-1,5,14],[6,13,-8]])";break;
+
+                    case "tru":
+                    case "Phép trừ ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1, 5, -1], [11, 3, 4], [1, -1, 3]])-Matran([[7, 2, 9], [1, 2, 5], [0, 2, 4]])  ";break; 
+
+                    case  "nhan":
+                    case "Phép nhân ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]])*Matran([[8, 0, 1],[0, 3, 5]])";break;
+
+                    case "chuyen_vi":
+                    case "Ma trận chuyển vị": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 5, -3, 9], [4, -9, 15, -4],[11, 5, -3, 10]])";break;
+
+                    case "luy_thua":
+                    case "Luỹ thừa ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "";break;
+
+                    case "dinh_thuc":
+                    case "Định thức ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[2, -1, 4], [6, -3, -2], [4, 1, 2]])";break;
+
+                    case "hang":
+                    case "Hạng ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1, 3, 5, 9], [1, 3, 1, 7], [4, 3, 9, 7], [5, 2, 0, 9]])";break;
+
+                    case "nghich_dao":
+                    case "Ma trận nghịch đảo": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1,0,0],[0,2,0],[0,0,3]])";break;
+
+                    case "pt_ma_tran":
+                    case "Phương trình ma trận": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = 
+                    "A := Matran([[1,2],[3,5]]); \nB := Matran([[1,0],[2,1]]) ;";break;
+
+                    case "nghiem_he_pt":
+                    case "Hệ phương trình tuyến tính ": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = 
+                    "Hephuongtrinh([x1+x2+x3=25, 5.x1+3.x2+2.x3= 0, x1+x2-x3=6,{x1,x2,x3}])";break;
+
+                    case "doc_lap_tt" :
+                    case "Độc lập tuyến tính,phụ thuộc tuyến tính": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = 
+                    "x:=Vector([3, -4, 1, 7]);\ny:=Vector([-2, 6, 8, -1]);\nz:=Vector([-13, 24, 13, -23]);";break;
+
+                    case "doi_co_so":
+                    case "Ma trận đổi cơ sở": 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = 
+                    "x:=Vector([-1, 1, 5, 0]);\ny:=Vector([2, -5, -4, 1]);\nz:=Vector([-3, 0, -2, 4]);\nS:=[x,y,z];\nx1:=Vector([-1, 7, 16, -5]);\ny1:=Vector([11, -17, 3, -4]);\nz1:=Vector([-19, 13, 15, 14]);\nSpace:=[x1,y1,z1];";break;
+                }
+            }
 
             function onFileSelected(event) {
                 let selectedFile = event.target.files[0];
@@ -292,7 +347,7 @@
                         MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                     });
 
-                    // document.getElementById("show").innerHTML = enteredText;
+                     //document.getElementById("show").innerHTML = enteredText;
                     // MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                 }
                 
@@ -309,6 +364,7 @@
                 // e.preventDefault()
                 var search = $('#search-select').val();
                 $("#operator").val(search);
+                setDefaultTextAreaValue();
                 return false
             })
 </script>
