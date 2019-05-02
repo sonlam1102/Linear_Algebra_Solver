@@ -49,15 +49,15 @@
         <div>
             <div class="container">
                 <div class="row justify-content-between">
-                    <div class="col-sm-4">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <img class="mr-10" src="http://utc2.edu.vn//uploads/img/images/logo.png"/>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <label class="mr-top-20" style="font-size:22px;text-align: center; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">CHƯƠNG TRÌNH HỖ TRỢ GIẢI CÁC BÀI TẬP <br/> KIẾN THỨC ĐẠI SỐ TUYẾN TÍNH</label>
                     </div>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-cus">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #0080FF!important">
                 <a class="navbar-brand" href="#" style="color: #000"><i class="fas fa-home" id ="home"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -112,25 +112,25 @@
                 <form>
                      <input id="token" value="{{ @csrf_token() }}" hidden>
                      <div class="row justify-content-between">
-                        <div class="col-sm-4 border-frm" style="width: 100%;color: blue;">
-                            <label class="mr-top-20">Dạng bài toán</label>
-                            <input type="text" name="" class="form-control border-input" value="" id="operator" readonly>
-                            <div class="file btn btn-success upfile mr-top-20" id="upfile">
-                                Upload
-                                <input type="file" name="file" class="upfile" id="upfiles" onchange="onFileSelected(event)"/>
-                            </div>
-                            <textarea class="form-control mr-top-20 border-input" id="exampleFormControlTextarea1" rows="10"></textarea>
-                        </div>
-                        <div class="col-sm-1">
-                            <div class="container">
-                                <button class="btn btn-success mr-5" id="result" style="text-align:center"><i class="fas fa-angle-double-right"></i></button>
+                        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4" style="width: 100%;color: blue;">
+                            <div class="row">
+                                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 border-frm">
+                                    <label class="mr-top-20">Dạng bài toán</label>
+                                    <input type="text" name="" class="form-control border-input" value="" id="operator" readonly>
+                                    <div class="file btn btn-success upfile mr-top-20" id="upfile">
+                                        Upload
+                                        <input type="file" name="file" class="upfile" id="upfiles" onchange="onFileSelected(event)"/>
+                                    </div>
+                                    <textarea class="form-control mr-top-20 border-input" id="exampleFormControlTextarea1" rows="10"></textarea>
+                                </div>
+                                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                    <button class="btn btn-success mr-5" id="result" style="text-align:center; padding: 15px 65px;position: absolute;bottom: 50%"><i class="fas fa-angle-double-right"></i></button>
+                                </div>
                             </div>
                             
                         </div>
                         <!-- <textarea class="col-sm-7 border-frm" id="show"> </textarea> --> 
-                        <div class="col-sm-7 border-frm" id="show">
-                            
-                        </div>
+                        <div class="col-sm-4 col-md-6 col-lg-6 col-xl-7 border-frm" id="show"></div>
                     </div>
                 </form>
             </div>
