@@ -3,6 +3,8 @@
 namespace App;
 
 
+use App\Console\RunCommand;
+
 class Parser
 {
     private $objects = [
@@ -12,25 +14,30 @@ class Parser
     ];
 
     private $problem = [
-        "Hang" => 1,
-        "Nghichdao" => 2,
-        "Cong" => 3,
-        "Tru" => 4,
-        "Nhan" => 5,
-        "DinhThuc" => 6,
-        "PhuongTrinhMaTran" => 7,
-        "NghiemHePhuongTirnh" => 8
+        "Phép cộng ma trận" => 1,
+        "Phép trừ ma trận" => 2,
+        "Phép nhân ma trận" => 3,
+        "Định thức ma trận" => 4,
+        "Hạng ma trận" => 5,
+        "Ma trận nghịch đảo" => 6,
+        "Phương trình ma trận" => 7,
+        "Hệ phương trình tuyến tính" => 8,
+        "Độc lập tuyến tính,phụ thuộc tuyến tính" => 9,
+        "Ma trận đổi cơ sở" => 10
     ];
 
     private $variables = ["A", "B", "C", "D", "E", "F", "G"];   # Các biến gán cho đối tượng
-    private $operators = ["+", "*"];                            # Các toán tử
 
     protected $ob = [];     # Tập O
     protected $facts = [];  # Tập F
     protected $goal = [];   # Tập G
 
-    function __construct() {
+    private $input = null;
+    private $type = null;
 
+    function __construct($input, $type) {
+        $this->input = $input;
+        $this->type = $type;
     }
 
     # Tách ra từng vế nếu như nhập vào dạng biểu thức
@@ -47,34 +54,87 @@ class Parser
         return $arr;
     }
 
-    public function parse($input) {
+    public function parse() {
         $count = 0;
 
-        $expr = $this->expression($input);
+        $temp_array = explode(";", $this->input);
 
-        //Neu nhu nhap vao mot bieu thuc
-        if (!empty($expr)) {
-            foreach ($expr as $v) {
-                foreach ($this->objects as $key => $value) {
-                    $k = strpos($v, $key);
-                    if ($k !== false) {
-                        array_push($this->ob, "[".$this->variables[$count].","."\"".$value."\""."]");
-                        $count = $count + 1;
-                    }
-                }
-            }
-        }
-        # Nhập vào đối tượng bình thường
-        else {
+        $curr_var_ob = [];
+
+        foreach ($temp_array as $val) {
             foreach ($this->objects as $key => $value) {
-                $k = strpos($input, $key);
+                $k = strpos($val, $key);
                 if ($k !== false) {
-                    array_push($this->ob, "[".$this->variables[$count].","."\"".$value."\""."]");
+                    $var = $this->variables[$count];
+
+                    array_push($curr_var_ob, $var);
+                    $fact_arr = explode($key, $val);
+                    array_push($this->ob, "[".$var.","."\"".$value."\""."]");
+
+                    if ($key == 'Matran') {
+                        array_push($this->facts, $var.".K=Array(".$fact_arr[1].")");
+                    }
+
                     $count = $count + 1;
                 }
             }
         }
-        dd($this->ob);
+
+        if ($this->problem[$this->type] == 1) {
+            array_push($this->ob, "[".$this->variables[count($curr_var_ob)].","."\""."MATRAN"."\""."]");
+            array_push($this->facts, $this->variables[count($curr_var_ob)]."=".$this->variables[count($curr_var_ob)-2]."+".$this->variables[count($curr_var_ob)-1]);
+            array_push($this->goal, $this->variables[count($curr_var_ob)]."."."K");
+        }
+        elseif ($this->problem[$this->type] == 2) {
+            array_push($this->ob, "[".$this->variables[count($curr_var_ob)].","."\""."MATRAN"."\""."]");
+            array_push($this->facts, $this->variables[count($curr_var_ob)]."=".$this->variables[count($curr_var_ob)-2]."-".$this->variables[count($curr_var_ob)-1]);
+            array_push($this->goal, $this->variables[count($curr_var_ob)]."."."K");
+        }
+        elseif ($this->problem[$this->type] == 3) {
+            array_push($this->ob, "[".$this->variables[count($curr_var_ob)].","."\""."MATRAN"."\""."]");
+            array_push($this->facts, $this->variables[count($curr_var_ob)]."=".$this->variables[count($curr_var_ob)-2]."*".$this->variables[count($curr_var_ob)-1]);
+            array_push($this->goal, $this->variables[count($curr_var_ob)]."."."K");
+        }
+        elseif ($this->problem[$this->type] == 4) {
+            array_push($this->goal, "DINHTHUC(".$this->variables[count($curr_var_ob)-1].")");
+        }
+        elseif ($this->problem[$this->type] == 5) {
+            array_push($this->goal, "HANG(".$this->variables[count($curr_var_ob)-1].")");
+        }
+        elseif ($this->problem[$this->type] == 6) {
+            array_push($this->goal, "HANG(".$this->variables[count($curr_var_ob)-1].")");
+        }
+
+//        var_dump($this->ob);
+//        var_dump($this->facts);
+//        var_dump($this->goal);
+//
+//        dd(1);
+    }
+
+    public function make() {
+        $this->parse();
+        $data = "restart;path := currentdir(); example_path := cat(path, \"/\"); knowledge_path := cat(cat(path, \"/Knowledge/\")); engine_path := cat(path, \"/COKB.mla\");";
+        $data = $data."march('open', engine_path);Init();ReadCOKB(knowledge_path);";
+
+        $data = $data."Ob:={".implode(",", $this->ob)."};";
+
+        $data = $data."F:={".implode(",", $this->facts)."};";
+        $data = $data."G:={".implode(",", $this->goal)."};";
+
+        $data = $data."Sol := GiaiBaiToan(Ob, F, G, false);";
+        $data = $data."XuatLoiGiai(Sol, cat(example_path, \"Ketqua.txt\"));";
+
+
+        $file = fopen("maple.mpl",'w');
+        fwrite($file, $data);
+        fclose($file);
+    }
+
+    public function execute() {
+        $run_bat = new RunCommand('maple.mpl');
+
+        $run_bat->execute();
     }
 }
 
