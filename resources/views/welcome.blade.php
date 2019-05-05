@@ -251,7 +251,7 @@
 
                     case  "nhan":
                     case "Phép nhân ma trận": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]])*Matran([[8, 0, 1],[0, 3, 5],[9, 3, 5]])";break;
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]]);Matran([[8, 0, 1],[0, 3, 5],[9, 3, 5]])";break;
 
                     case "chuyen_vi":
                     case "Ma trận chuyển vị": 
@@ -271,7 +271,7 @@
 
                     case "nghich_dao":
                     case "Ma trận nghịch đảo": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1,0,0],[0,2,0],[0,0,3]])";break;
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1, 2, 3], [4, 5, 6], [7, 2, 9]])";break;
 
                     case "pt_ma_tran":
                     case "Phương trình ma trận": 
@@ -325,7 +325,7 @@
 
                 enteredText = enteredText.replace(/\n/g, "\$ <br/> \$");
                 let y = $('#operator').val();
-                let x = $("#exampleFormControlTextarea1").val();
+                let x = $("#exampleFormControlTextarea1").val()
                 if (y === '') {
                 alert("Chọn dạng bài toán muốn thực hiện, sau đó nhập bài toán trước khi giải");
                 }
@@ -341,8 +341,11 @@
                             "_token": $("#token").val()
                         },
                         success: function (text) {
+                            
+                            text = "$" + text;
+                            text = text.replace(/\n/g, "\$ <br/> \$");
+                            text = text.substr(0, text.length-1);
                             console.log(text);
-
                             document.getElementById("show").innerHTML = text;
                             MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                         }
@@ -357,7 +360,7 @@
                     // });
 
                      //document.getElementById("show").innerHTML = enteredText;
-                    // MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                    //MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
                 }
                 
             });
