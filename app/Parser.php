@@ -102,7 +102,7 @@ class Parser
             array_push($this->goal, "HANG(".$this->variables[count($curr_var_ob)-1].")");
         }
         elseif ($this->problem[$this->type] == 6) {
-            array_push($this->goal, "HANG(".$this->variables[count($curr_var_ob)-1].")");
+            array_push($this->goal, "NGHICHDAO(".$this->variables[count($curr_var_ob)-1].")");
         }
 
 //        var_dump($this->ob);
