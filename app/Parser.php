@@ -132,9 +132,18 @@ class Parser
     }
 
     public function execute() {
+        $this->make();
+
         $run_bat = new RunCommand('maple.mpl');
 
         $run_bat->execute();
+
+        try {
+            return file_get_contents('Ketqua.txt');
+        }
+        catch (\Exception $e ) {
+            return "";
+        }
     }
 }
 

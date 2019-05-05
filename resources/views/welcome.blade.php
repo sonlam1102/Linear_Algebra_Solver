@@ -243,15 +243,15 @@
                 switch($("#operator").val()) {
                     case "cong":
                     case "Phép cộng ma trận": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[3,0,5],[-2,7,4]])+Matran([[-1,5,14],[6,13,-8]])";break;
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[3,0,5],[-2,7,4]]);Matran([[-1,5,14],[6,13,-8]])";break;
 
                     case "tru":
                     case "Phép trừ ma trận": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1, 5, -1], [11, 3, 4], [1, -1, 3]])-Matran([[7, 2, 9], [1, 2, 5], [0, 2, 4]])  ";break; 
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[1, 5, -1], [11, 3, 4], [1, -1, 3]]);Matran([[7, 2, 9], [1, 2, 5], [0, 2, 4]])  ";break;
 
                     case  "nhan":
                     case "Phép nhân ma trận": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]])*Matran([[8, 0, 1],[0, 3, 5]])";break;
+                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]])*Matran([[8, 0, 1],[0, 3, 5],[9, 3, 5]])";break;
 
                     case "chuyen_vi":
                     case "Ma trận chuyển vị": 
@@ -334,18 +334,27 @@
                     $.ajax({
                         type: "POST",
                         url: '/',
-                        dataType: 'json',
+                        dataType: 'text',
                         data: {
                             "type": y,
                             "problem": x,
                             "_token": $("#token").val()
                         },
-                    }).done(function(response) {
-                        //xử lý kết quả thêm thì viết ở đây
+                        success: function (text) {
+                            console.log(text);
 
-                        document.getElementById("show").innerHTML = response;
-                        MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                            document.getElementById("show").innerHTML = text;
+                            MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                        }
                     });
+                    // }).done(function(data) {
+                    //     //xử lý kết quả thêm thì viết ở đây
+                    //
+                    //     console.log(1);
+                    //
+                    //     document.getElementById("show").innerHTML = data;
+                    //     MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
+                    // });
 
                      //document.getElementById("show").innerHTML = enteredText;
                     // MathJax.Hub.Queue(["Typeset",MathJax.Hub,"show"]);
