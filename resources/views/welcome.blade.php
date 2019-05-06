@@ -159,56 +159,53 @@
                     },
                     {
                         "name": "Phép cộng ma trận",
-                        "type": "cong"
+                        "type": "Phép cộng ma trận"
                     },
 
                     {
                         "name": "Phép trừ ma trận",
-                        "type": "tru"
+                        "type": "Phép trừ ma trận"
                     },
                     {
                         "name": "Phép nhân ma trận",
-                        "type": "nhan"
+                        "type": "Phép nhân ma trận"
                     },
                     {
                         "name": "Luỹ thừa ma trận",
-                        "type": "luy_thua"
+                        "type": "Luỹ thừa ma trận"
                     },
                     {
                         "name": "Ma trận chuyển vị",
-                        "type": "chuyen_vi"
+                        "type": "Ma trận chuyển vị"
                     },
                     {
                         "name": "Định thức ma trận",
-                        "type": "dinh_thuc"
+                        "type": "Định thức ma trận"
                     },
                     {
                         "name": "Hạng ma trận",
-                        "type": "hang"
+                        "type": "Hạng ma trận"
                     },
                     {
                         "name": "Ma trận nghịch đảo",
-                        "type": "nghich_dao"
+                        "type": "Ma trận nghịch đảo"
                     },
                     {
                         "name": "Phương trình ma trận",
-                        "type": "pt_ma_tran"
+                        "type": "Phương trình ma trận"
                     },
                     {
                         "name": "Hệ phương trình tuyến tính",
-                        "type": "nghiem_he_pt"
+                        "type": "Hệ phương trình tuyến tính"
                     },
-                    {
-                        "name": "Hệ phương trình tuyến tính",
-                        "type": "nghiem_he_pt"
-                    },
+                
                     {
                         "name": "Độc lập tuyến tính,phụ thuộc tuyến tính",
-                        "type": "doc_lap_tt"
+                        "type": "Độc lập tuyến tính,phụ thuộc tuyến tính"
                     },
                     {
                         "name": "Ma trận đổi cơ sở",
-                        "type": "doi_co_so"
+                        "type": "Ma trận đổi cơ sở"
                     },
 
                 ]; 
