@@ -229,6 +229,8 @@
                 /*console.log($('#exampleFormControlTextarea1').val())*/
                 document.getElementById("search-select").value ="";
                 setDefaultTextAreaValue();
+                document.getElementById("show").innerHTML = "";
+
             });
 
             $(".fa-home").click(function(event){
