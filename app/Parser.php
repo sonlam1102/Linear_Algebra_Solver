@@ -67,18 +67,32 @@ class Parser
                 if ($k !== false) {
                     $var = $this->variables[$count];
 
-                    array_push($curr_var_ob, $var);
                     $fact_arr = explode($key, $val);
-                    array_push($this->ob, "[".$var.","."\"".$value."\""."]");
 
                     if ($key == 'Matran') {
+                        array_push($this->ob, "[".$var.","."\"".$value."\""."]");
                         array_push($this->facts, $var.".K=Array(".$fact_arr[1].")");
+
+                        array_push($curr_var_ob, $var);
+                    }
+                    elseif ($key == 'Hephuongtrinh') {
+                        $var = $this->variables[$count+2];
+                        array_push($this->ob, "[".$var.","."\"".$value."\""."]");
+//                        dd($fact_arr);
+                        $htp_facts_arr = explode(",{", $fact_arr[1]);
+
+                        array_push($this->facts, $var.".K=".ltrim($htp_facts_arr[0], "("));
+                        array_push($this->facts, $var.".p={".rtrim($htp_facts_arr[1], ")"));
+
+                        array_push($curr_var_ob, $var);
                     }
 
                     $count = $count + 1;
                 }
             }
         }
+
+//        dd($this->facts);
 
         if ($this->problem[$this->type] == 1) {
             array_push($this->ob, "[".$this->variables[count($curr_var_ob)].","."\""."MATRAN"."\""."]");
@@ -103,6 +117,9 @@ class Parser
         }
         elseif ($this->problem[$this->type] == 6) {
             array_push($this->goal, "NGHICHDAO(".$this->variables[count($curr_var_ob)-1].")");
+        }
+        elseif ($this->problem[$this->type] == 8) {
+            array_push($this->goal, "NGHIEM(".$curr_var_ob[count($curr_var_ob)-1].")");
         }
 
 //        var_dump($this->ob);
@@ -136,13 +153,15 @@ class Parser
 
         $run_bat = new RunCommand('maple.mpl');
 
-        $run_bat->execute();
-
         try {
+            if (file_exists('Ketqua.txt')) {
+                unlink('Ketqua.txt');
+            }
+            $run_bat->execute();
             return file_get_contents('Ketqua.txt');
         }
         catch (\Exception $e ) {
-            return "";
+            return "Hiện không thể giải bài toán này";
         }
     }
 }

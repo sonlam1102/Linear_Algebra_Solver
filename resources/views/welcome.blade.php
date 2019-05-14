@@ -280,7 +280,7 @@
                     case "nghiem_he_pt":
                     case "Hệ phương trình tuyến tính ": 
                     document.getElementById("exampleFormControlTextarea1").innerHTML = 
-                    "Hephuongtrinh([x1+x2+x3=25, 5.x1+3.x2+2.x3= 0, x1+x2-x3=6,{x1,x2,x3}])";break;
+                    "Hephuongtrinh([x+y+z=25, 5*x+3*y+2*z= 0, x+y-z=6],{x,y,z})";break;
 
                     case "doc_lap_tt" :
                     case "Độc lập tuyến tính,phụ thuộc tuyến tính": 
@@ -330,6 +330,7 @@
                 }
                 else {
                     // xử lý lấy kết quả và trả về giao diện
+                    document.getElementById("show").innerHTML = "";
                     $.ajax({
                         type: "POST",
                         url: '/',
