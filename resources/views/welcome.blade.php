@@ -71,8 +71,6 @@
                               <a class="dropdown-item get-operator operator" href="">Phép cộng ma trận</a>
                               <a class="dropdown-item get-operator operator" href="">Phép trừ ma trận</a>
                               <a class="dropdown-item get-operator operator" href="">Phép nhân ma trận</a>
-                              <a class="dropdown-item get-operator operator" href="">Luỹ thừa ma trận</a>
-                              <a class="dropdown-item get-operator operator" href="">Ma trận chuyển vị</a>
                               <a class="dropdown-item get-operator operator" href="">Định thức ma trận</a>
                               <a class="dropdown-item get-operator operator" href="">Hạng ma trận</a>
                               <a class="dropdown-item get-operator operator" href="">Ma trận nghịch đảo</a>
@@ -89,18 +87,10 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến tính</a>
                               <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
-                              <!--<a class="dropdown-item get-operator operator" href="">Xác định tổ hợp tuyến tính</a>
-                              <a class="dropdown-item get-operator operator" href="">Hạng của hệ vector</a>
-                              <a class="dropdown-item get-operator operator" href="">Tập sinh không gian tuyến tính</a>
-                              <a class="dropdown-item get-operator operator" href="">Cơ sở không gian tuyến tính</a>
-                              <a class="dropdown-item get-operator operator" href="">Toạ độ vector</a>
-                              <a class="dropdown-item get-operator operator" href="">Tổng và giao không gian con</a> -->
-
                             </div>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 search-form" id="frm-search">
-                        <!-- <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search"> -->
                         <select class="col-sm-4 js-example-basic-single" name="search-select" id="search-select">
                             
                         </select>
@@ -169,14 +159,6 @@
                     {
                         "name": "Phép nhân ma trận",
                         "type": "Phép nhân ma trận"
-                    },
-                    {
-                        "name": "Luỹ thừa ma trận",
-                        "type": "Luỹ thừa ma trận"
-                    },
-                    {
-                        "name": "Ma trận chuyển vị",
-                        "type": "Ma trận chuyển vị"
                     },
                     {
                         "name": "Định thức ma trận",
@@ -252,14 +234,6 @@
                     case "Phép nhân ma trận": 
                     document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 3],[-7, 11]]);Matran([[8, 0, 1],[0, 3, 5],[9, 3, 5]])";break;
 
-                    case "chuyen_vi":
-                    case "Ma trận chuyển vị": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[11, 5, -3, 9], [4, -9, 15, -4],[11, 5, -3, 10]])";break;
-
-                    case "luy_thua":
-                    case "Luỹ thừa ma trận": 
-                    document.getElementById("exampleFormControlTextarea1").innerHTML = "";break;
-
                     case "dinh_thuc":
                     case "Định thức ma trận": 
                     document.getElementById("exampleFormControlTextarea1").innerHTML = "Matran([[2, -1, 4], [6, -3, -2], [4, 1, 2]])";break;
@@ -277,8 +251,8 @@
                     document.getElementById("exampleFormControlTextarea1").innerHTML = 
                     "A := Matran([[1,2],[3,5]]); \nB := Matran([[1,0],[2,1]]) ;";break;
 
-                    case "nghiem_he_pt":
-                    case "Hệ phương trình tuyến tính ": 
+                    case "Hệ phương trình tuyến tính":
+                    case "Hệ phương trình tuyến tính": 
                     document.getElementById("exampleFormControlTextarea1").innerHTML = 
                     "Hephuongtrinh([x+y+z=25, 5*x+3*y+2*z= 0, x+y-z=6],{x,y,z})";break;
 
