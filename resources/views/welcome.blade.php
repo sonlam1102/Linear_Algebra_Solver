@@ -251,7 +251,7 @@
                     document.getElementById("exampleFormControlTextarea1").innerHTML = 
                     "A := Matran([[1,2],[3,5]]); \nB := Matran([[1,0],[2,1]]) ;";break;
 
-                    case "Hệ phương trình tuyến tính":
+                    //case "he_pt":
                     case "Hệ phương trình tuyến tính": 
                     document.getElementById("exampleFormControlTextarea1").innerHTML = 
                     "Hephuongtrinh([x+y+z=25, 5*x+3*y+2*z= 0, x+y-z=6],{x,y,z})";break;
