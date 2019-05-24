@@ -91,6 +91,9 @@
                 border: 1px solid black;
                 border-radius: 5px;
             }
+            #navbarDropdown{
+                color: black;
+            }
             #navbarSupportedContent{
                 color: black
             }

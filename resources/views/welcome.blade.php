@@ -104,6 +104,7 @@
                         <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
                     </div>
                 </li>
+                
             </ul>
             <form class="form-inline my-2 my-lg-0 search-form" id="frm-search">
                 <select class="col-sm-4 js-example-basic-single" name="search-select" id="search-select">
@@ -287,6 +288,7 @@
 
             // case "doc_lap_tt" :
             case "Độc lập tuyến tính,phụ thuộc tuyến tính":
+                console.log(1);
                 document.getElementById("exampleFormControlTextarea1").innerHTML =
                     "x:=Vector([3, -4, 1, 7]);\ny:=Vector([-2, 6, 8, -1]);\nz:=Vector([-13, 24, 13, -23]);";
                 break;
