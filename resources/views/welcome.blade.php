@@ -349,6 +349,8 @@
 
                     text = "$" + text;
                     text = text.replace(/\n/g, "\$ <br/> \$");
+                    text = text.replace(/\\noalign{\\medskip}/g, "");
+                    console.log(text);
                     text = text.substr(0, text.length - 1);
                     document.getElementById("show").innerHTML = text;
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, "show"]);
