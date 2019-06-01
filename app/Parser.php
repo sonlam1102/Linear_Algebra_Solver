@@ -10,7 +10,7 @@ class Parser
     private $objects = [
         "Matran" => "MATRAN",
         "Hephuongtrinh" => "HEPHUONGTRINH",
-        "Vector" => "VECTOR"
+        "KGVector" => "VECTOR"
     ];
 
     private $problem = [
@@ -22,7 +22,7 @@ class Parser
         "Ma trận nghịch đảo" => 6,
         "Phương trình ma trận" => 7,
         "Hệ phương trình tuyến tính" => 8,
-        "Độc lập tuyến tính,phụ thuộc tuyến tính" => 9,
+        "Độc lập tuyến tính" => 9,
         "Ma trận đổi cơ sở" => 10
     ];
 
@@ -86,6 +86,16 @@ class Parser
 
                         array_push($curr_var_ob, $var);
                     }
+                    elseif ($key == 'KGVector') {
+                        $var = $this->variables[$count+2];
+
+                        array_push($this->ob, "[".$var.","."\"".$value."\""."]");
+                        $fact_arr[1] = ltrim($fact_arr[1], "(");
+                        $fact_arr[1] = rtrim($fact_arr[1], ")");
+                        array_push($this->facts, $var.".u=[".$fact_arr[1]."]");
+
+                        array_push($curr_var_ob, $var);
+                    }
 
                     $count = $count + 1;
                 }
@@ -120,6 +130,12 @@ class Parser
         }
         elseif ($this->problem[$this->type] == 8) {
             array_push($this->goal, "NGHIEM(".$curr_var_ob[count($curr_var_ob)-1].")");
+        }
+        elseif ($this->problem[$this->type] == 9) {
+            array_push($this->goal, $curr_var_ob[count($curr_var_ob)-1]."."."p");
+        }
+        elseif ($this->problem[$this->type] == 10) {
+            array_push($this->goal, "MATRANDOICOSO(".$curr_var_ob[count($curr_var_ob)-2].",".$curr_var_ob[count($curr_var_ob)-1].")");
         }
 
 //        var_dump($this->ob);

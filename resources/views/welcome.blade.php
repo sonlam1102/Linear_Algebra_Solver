@@ -99,8 +99,7 @@
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Không gian vector</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính,phụ thuộc tuyến
-                            tính</a>
+                        <a class="dropdown-item get-operator operator" href="">Độc lập tuyến tính</a>
                         <a class="dropdown-item get-operator operator" href="">Ma trận đổi cơ sở</a>
                     </div>
                 </li>
@@ -203,8 +202,8 @@
             },
 
             {
-                "name": "Độc lập tuyến tính,phụ thuộc tuyến tính",
-                "type": "Độc lập tuyến tính,phụ thuộc tuyến tính"
+                "name": "Độc lập tuyến tính",
+                "type": "Độc lập tuyến tính"
             },
             {
                 "name": "Ma trận đổi cơ sở",
@@ -287,16 +286,17 @@
                 break;
 
             // case "doc_lap_tt" :
-            case "Độc lập tuyến tính,phụ thuộc tuyến tính":
+            case "Độc lập tuyến tính":
                 console.log(1);
                 document.getElementById("exampleFormControlTextarea1").innerHTML =
-                    "x:=Vector([3, -4, 1, 7]);\ny:=Vector([-2, 6, 8, -1]);\nz:=Vector([-13, 24, 13, -23]);";
+                    "KGVector([3, -4, 1, 7], [-2, 6, 8, -1], [-13, 24, 13, -23]);";
                 break;
 
             // case "doi_co_so":
             case "Ma trận đổi cơ sở":
+                console.log(1);
                 document.getElementById("exampleFormControlTextarea1").innerHTML =
-                    "x:=Vector([-1, 1, 5, 0]);\ny:=Vector([2, -5, -4, 1]);\nz:=Vector([-3, 0, -2, 4]);\nS:=[x,y,z];\nx1:=Vector([-1, 7, 16, -5]);\ny1:=Vector([11, -17, 3, -4]);\nz1:=Vector([-19, 13, 15, 14]);\nSpace:=[x1,y1,z1];";
+                    "KGVector([-1, 1, 5, 0], [2, -5, -4, 1], [-3, 0, -2, 4]);\nKGVector([-1, 7, 16, -5], [11, -17, 3, -4], [-19, 13, 15, 14]);";
                 break;
         }
     }
