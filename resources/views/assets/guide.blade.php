@@ -8,13 +8,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Nhập đối tượng ma trận: <strong style="color:#FF0000">Matran([[],[],[]])</strong>
+                <p style="color:#FF0000";>Quy ước chung</p>
+                <p>Nhập đối tượng ma trận: <strong style="color:#FF0000">Matran([danh sách các giá trị hàng của ma trận])</strong>
                     <p style="color:#3224ff"> VD: Matran([[7, 2, 9], [1, 2, 5], [0, 2, 4]]) </p>
+
                 </p>
-                <p>Nhập đối tượng hệ phương trình: <strong style="color:#FF0000">Hephuongtrinh([],{})</strong>
+                <p>Nhập đối tượng hệ phương trình: <strong style="color:#FF0000">Hephuongtrinh([danh sách các biểu thức],{danh sách các biến})</strong>
                     <p style="color:#3224ff"> VD: Hephuongtrinh([x+y+z=25, 5*x+3*y+2*z= 0, x+y-z=6],{x,y,z}) </p>
                 </p>
-                <p>Nhập đối tượng ma Không gian vector: <strong style="color:#FF0000">KGVector([], [], [])</strong>
+                <p>Nhập đối tượng ma Không gian vector: <strong style="color:#FF0000">KGVector([các giá trị của vector])</strong>
                     <p style="color:#3224ff"> VD: KGVector([3, -4, 1, 7], [-2, 6, 8, -1], [-13, 24, 13, -23]); </p>
                 </p>
 
