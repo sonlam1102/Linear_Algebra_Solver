@@ -20,6 +20,6 @@ class Controller extends BaseController
             return response($result, 200)->header('Content-Type', 'text/plain');
         }
 
-        return view('welcome');
+        return view('main');
     }
 }
