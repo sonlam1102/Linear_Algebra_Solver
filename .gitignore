@@ -12,3 +12,5 @@ yarn-error.log
 .idea/
 maple.mpl
 Ketqua.txt
+composer.phar
+composer.lock
