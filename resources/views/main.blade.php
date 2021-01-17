@@ -58,9 +58,6 @@
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                        <img class="mr-10" src="http://utc2.edu.vn//uploads/img/images/logo.png"/>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <label class="mr-top-20"
                                style="font-size:22px;text-align: center; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">CHƯƠNG
                             TRÌNH HỖ TRỢ GIẢI CÁC BÀI TẬP <br/> KIẾN THỨC ĐẠI SỐ TUYẾN TÍNH</label>
@@ -73,12 +70,6 @@
         </div>
 
         <hr/>
-        <div class="pd-50" style="background-color: #0080ff; color: black">
-            TRƯỜNG ĐH GIAO THÔNG VẬN TẢI - PHÂN HIỆU TẠI TP. HCM<br/>
-            Địa chỉ: 450-451 Lê Văn Việt, Phường Tăng Nhơn Phú A, Quận 9, TP. Hồ Chí Minh<br/>
-            Điện thoại: (028).3896.6798 - (028).7300.1155 - Email: banbientap@utc2.eu.vn<br/>
-            Fax: (028).3896.4736 - Website: http://utc2.edu.vn
-        </div>
 
     </body>
 </html>
